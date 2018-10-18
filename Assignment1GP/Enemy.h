@@ -7,10 +7,11 @@ class Enemy : public GameCharacter
 {
 
 public:
-	void spawn(string typeID, int health, int speed, int x, int y);
+	Enemy(string typeID, int health, int speed, int x, int y);
 	virtual void update();
 	int randCoordX();
 	int randCoordY();
+	int randSpeed();
 
 
 };

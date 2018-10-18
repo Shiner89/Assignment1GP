@@ -1,2 +1,8 @@
-﻿  Main.cpp
-  Assignment1GP.vcxproj -> C:\gp\tutorials\Assignment1GP\Debug\Assignment1GP.exe
+﻿  Game.cpp
+c:\gp\tutorials\assignment1gp\assignment1gp\game.cpp(11): error C2512: 'Player::Player': no appropriate default constructor available
+  Main.cpp
+  Player.cpp
+c:\gp\tutorials\assignment1gp\assignment1gp\player.cpp(23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\gp\tutorials\assignment1gp\assignment1gp\player.cpp(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\gp\tutorials\assignment1gp\assignment1gp\player.cpp(39): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...

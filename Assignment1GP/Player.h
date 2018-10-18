@@ -7,10 +7,12 @@ class Player: public GameCharacter
 {
 
 public:
-	void spawn(string typeID, int health, int speed, int x, int y);
+	
+	Player(string typeID ,  int speed, int x, int y,int health);
 	virtual void update();
 	int randCoordX();
 	int randCoordY();
+	int randSpeed();
 
 
 };

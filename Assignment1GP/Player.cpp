@@ -1,13 +1,16 @@
 #include "Player.h"
 
-void Player::spawn(string typeID, int health, int speed, int x, int y)
+
+
+Player::Player(string typeID, int speed, int x, int y, int health )
 {
-	m_typeID = typeID;
-	m_Health = 200;
-	m_Speed = speed;
+	cout << "created player" << endl;
 	//call function that random generates x and y within map of 10 *10
-	m_X= randCoordX();
-	m_Y = randCoordY();
+	typeID = "Hero";
+	x= randCoordX();
+	y = randCoordY();
+	speed = randSpeed();
+	spawn(typeID,speed, x, y,health);
 }
 
 void Player::update()
@@ -29,4 +32,12 @@ int Player::randCoordY()
 	int randCoord = rand() % 10;
 	cout << "Y Value will be " << randCoord << endl;
 	return randCoord;
+}
+
+int Player::randSpeed()
+{
+	srand(time(NULL));
+	int randSpeed = rand() % 10;
+	cout << "Speed value will be: " << randSpeed << endl;
+	return randSpeed;
 }

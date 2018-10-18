@@ -1,13 +1,14 @@
 #include "Enemy.h"
 
-void Enemy::spawn(string typeID, int health, int speed, int x, int y)
+Enemy::Enemy(string typeID, int health, int speed, int x, int y)
 {
-	m_typeID = typeID;
-	m_Health = 200;
-	m_Speed = speed;
+	cout << "created player" << endl;
 	//call function that random generates x and y within map of 10 *10
-	m_X = x;
-	m_Y = y;
+	typeID = "Enemy";
+	x = randCoordX();
+	y = randCoordY();
+	speed = randSpeed();
+	spawn(typeID, speed, x, y, health);
 }
 
 void Enemy::update()
@@ -29,4 +30,12 @@ int Enemy::randCoordY()
 	int randCoord = rand() % 10;
 	cout << "Y Value will be " << randCoord << endl;
 	return randCoord;
+}
+
+int Enemy::randSpeed()
+{
+	srand(time(NULL));
+	int randSpeed = (rand() % 3 )+1;
+	cout << "Speed value will be: " << randSpeed << endl;
+	return randSpeed;
 }

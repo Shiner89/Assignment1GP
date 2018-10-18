@@ -2,6 +2,9 @@
 #ifndef GAME_H
 #define GAME_H
 #include "GameCharacter.h"
+#include "Player.h"
+#include "Enemy.h"
+#include <vector>
 
 class Game
 {
