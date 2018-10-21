@@ -22,10 +22,15 @@ void GameCharacter::render()
 
 void GameCharacter::stats()
 {
+	
 	cout << "TypeID: " << m_typeID << endl;
 	cout << "Health: " << m_Health << endl;
 	cout << "Speed: " << m_Speed << endl;
 	cout << "X and Y coords are: " << m_X << "," << m_Y << endl;
+}
+void GameCharacter::update()
+{
+
 }
 
 
@@ -40,4 +45,35 @@ bool GameCharacter::isAlive()
 		return false;
 	}
 }
+string GameCharacter::getID()
+{
+	return m_typeID;
+}
 
+int GameCharacter::returnX()
+{
+	return m_X;
+}
+
+int GameCharacter::returnY()
+{
+	return m_Y;
+}
+
+void GameCharacter::coordChange()
+{
+	int randCoordx = rand() % 10;
+	cout << "new X Value will be " << randCoordx << endl;
+	int randCoordy = rand() % 10;
+	cout << "new Y Value will be " << randCoordy << endl;
+	m_X = randCoordx;
+	m_Y = randCoordy;
+}
+int GameCharacter::getHealth()
+{
+	return m_Health;
+}
+void GameCharacter::getHealth()
+{
+	m_Health = 0;
+}

@@ -7,7 +7,7 @@ class Enemy : public GameCharacter
 {
 
 public:
-	Enemy(string typeID, int health, int speed, int x, int y);
+	Enemy(string typeID);
 	virtual void update();
 	int randCoordX();
 	int randCoordY();

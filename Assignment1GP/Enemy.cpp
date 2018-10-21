@@ -1,41 +1,43 @@
 #include "Enemy.h"
 
-Enemy::Enemy(string typeID, int health, int speed, int x, int y)
+Enemy::Enemy(string typeID)
 {
-	cout << "created player" << endl;
+	cout << "created Enemy" << endl;
 	//call function that random generates x and y within map of 10 *10
-	typeID = "Enemy";
-	x = randCoordX();
-	y = randCoordY();
-	speed = randSpeed();
-	spawn(typeID, speed, x, y, health);
+	
+	int x = randCoordX();
+	int y = randCoordY();
+	int speed = randSpeed();
+	int health = 170;
+	spawn(typeID,health,speed, x, y);
 }
 
 void Enemy::update()
 {
-
+	//this will hold a random number 0-3 that decides the direction that the character moves.
+	//if it is close to the edge it will bounce and move back the other direction
 }
 
 int Enemy::randCoordX()
 {
-	srand(time(NULL));
-	int randCoord = rand() % 10;
-	cout << "X Value will be " << randCoord << endl;
-	return randCoord;
+	
+	int randCoordx = rand() % 10;
+	cout << "X Value will be " << randCoordx << endl;
+	return randCoordx;
 }
 
 int Enemy::randCoordY()
 {
-	srand(time(NULL));
-	int randCoord = rand() % 10;
-	cout << "Y Value will be " << randCoord << endl;
-	return randCoord;
+	
+	int randCoordy = rand() % 10;
+	cout << "Y Value will be " << randCoordy << endl;
+	return randCoordy;
 }
 
 int Enemy::randSpeed()
 {
-	srand(time(NULL));
-	int randSpeed = (rand() % 3 )+1;
+	
+	int randSpeed = rand() % 3 +1;
 	cout << "Speed value will be: " << randSpeed << endl;
 	return randSpeed;
 }

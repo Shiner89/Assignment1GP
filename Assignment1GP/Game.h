@@ -15,5 +15,10 @@ public:
 	void battle();//check coords of all objects and make them fight if on same space
 	void stats();//cycle and print all stats
 	void clean();//cycle and delete any who have 0 health
+
+private:
+	vector<GameCharacter*> vpCharacters;
+	vector<GameCharacter*>::const_iterator iter;
+	vector<GameCharacter*>::const_iterator iter2;
 };
 #endif // !GAME_H

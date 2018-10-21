@@ -8,7 +8,7 @@ class Player: public GameCharacter
 
 public:
 	
-	Player(string typeID ,  int speed, int x, int y,int health);
+	Player();
 	virtual void update();
 	int randCoordX();
 	int randCoordY();
