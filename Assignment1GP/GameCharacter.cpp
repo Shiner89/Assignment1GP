@@ -73,7 +73,7 @@ int GameCharacter::getHealth()
 {
 	return m_Health;
 }
-void GameCharacter::getHealth()
+void GameCharacter::setHealth()
 {
 	m_Health = 0;
 }

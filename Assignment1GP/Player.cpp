@@ -16,8 +16,20 @@ Player::Player()
 
 void Player::update()
 {
-	//the user is asked what direction that the character moves.
-	//if it is close to the edge it will bounce and move back the other direction
+	cout << "What direction would you like to move?\n 1: move UP\n 2: move DOWN\n 3: move RIGHT\n 4: move LEFT" << endl;
+	int playerMove = cin.get();
+	switch(playerMove)
+	{
+	case 1:
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+
+	}
 }
 
 int Player::randCoordX()

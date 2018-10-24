@@ -43,9 +43,10 @@ void Game::init()
 
 	//make an if loop that will check all and if there positions match then change then. this will only happen once
 	//this loop will be reused through the battle checking function
+	cout << "Loop Chack to see if any characters match points" << endl;
 	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
 	{
-		cout << "Start of loop to check map points are not the same" << endl;
+		
 
 		int firstX = (*iter)->returnX();
 		int firstY = (*iter)->returnY();
@@ -70,14 +71,20 @@ void Game::render()
 
 void Game::update()
 {
+	cout << "Start of Update Loop to move all characters" << endl;
 
+	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
+	{
+		(*iter)->update();
+	}
 }
 
 void Game::battle()
 {
+	cout << "Start of Battle Chack Phase" << endl;
 	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
 	{
-		cout << "Start of loop to check map points are not the same" << endl;
+		
 
 		
 		for (iter2 = vpCharacters.begin(); iter2 != vpCharacters.end(); iter2++)
@@ -87,7 +94,7 @@ void Game::battle()
 			{
 				if ((*iter)->getHealth() > (*iter2)->getHealth())
 				{
-					(*iter)->update();
+					
 					(*iter2)->setHealth();
 				}
 				else
