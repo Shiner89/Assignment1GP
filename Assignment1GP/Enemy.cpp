@@ -16,7 +16,69 @@ void Enemy::update()
 {
 	//this will hold a random number 0-3 that decides the direction that the character moves.
 	//if it is close to the edge it will bounce and move back the other direction
+	bool moveCheck = false;
+	int change = 0;
+
+
+	while (moveCheck != true)
+	{
+
+		int randMove = rand() % 4 + 1;
+		cout << "value selected: " << randMove << endl;
+		
+		cout << "change is: " << change << endl;
+
+		if (randMove == 1)
+		{
+			change = this->m_Y + this->m_Speed;
+			if (change >= 10 )
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 3);
+				this->m_Y = this->m_Y + this->m_Speed;
+				moveCheck = true;
+			}
+			
+
+		}
+		else if (randMove == 2)
+		{
+			change = this->m_Y - this->m_Speed;
+			if (change >= 0)
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 3);
+				this->m_Y = this->m_Y - this->m_Speed;
+				moveCheck = true;
+			}
+			
+		}
+		else if (randMove == 3)
+		{
+			change = this->m_X + this->m_Speed;
+			if (change <= 10 )
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 3);
+				this->m_X = this->m_X + this->m_Speed;
+				moveCheck = true;
+			}
+			
+		}
+		else if (randMove == 4)
+		{
+			change = this->m_X - this->m_Speed;
+			if (change >= 0)
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 3);
+				this->m_X = this->m_X - this->m_Speed;
+				moveCheck = true;
+			}
+			
+		}
+
+	}
 }
+	
+
+
 
 int Enemy::randCoordX()
 {

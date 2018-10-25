@@ -26,7 +26,7 @@ void Game::init()
 	vpCharacters.push_back(Enemy4);
 
 	
-
+	cout << "\n---------------------------------------------------------------------" << endl;
 	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
 	{
 		(*iter)->stats();
@@ -62,25 +62,38 @@ void Game::init()
 		}
 
 	}
+	
+
+	cout << "\n---------------------------------------------------------------------" << endl;
 }
 
 void Game::render()
 {
+	cout << "\n---------------------------------------------------------------------" << endl;
+	cout << "Start of Render Loop to State all characters pos" << endl;
 
+	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
+	{
+		(*iter)->render();
+	}
+	cout << "\n---------------------------------------------------------------------" << endl;
 }
 
 void Game::update()
 {
+	cout << "\n---------------------------------------------------------------------" << endl;
 	cout << "Start of Update Loop to move all characters" << endl;
 
 	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
 	{
 		(*iter)->update();
 	}
+	cout << "\n---------------------------------------------------------------------" << endl;
 }
 
 void Game::battle()
 {
+	cout << "\n---------------------------------------------------------------------" << endl;
 	cout << "Start of Battle Chack Phase" << endl;
 	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
 	{
@@ -92,13 +105,15 @@ void Game::battle()
 
 			if ((*iter)->returnX() == (*iter2)->returnX() && (*iter)->returnY() == (*iter2)->returnY() && (*iter)->getID() != (*iter2)->getID())
 			{
+				cout << "Battle happend between" << (*iter)->getID() << " and " << (*iter2)->getID() << endl;
 				if ((*iter)->getHealth() > (*iter2)->getHealth())
 				{
-					
+					cout << (*iter)->getID() << " has won" << endl;
 					(*iter2)->setHealth();
 				}
 				else
 				{
+					cout << (*iter2)->getID() << " has won" << endl;
 					(*iter)->setHealth();
 				}
 			}
@@ -107,16 +122,35 @@ void Game::battle()
 
 	}
 
-	
+	cout << "\n---------------------------------------------------------------------" << endl;
 }
 
 void Game::stats()
 {
+	cout << "\n---------------------------------------------------------------------" << endl;
+	cout << "Start of Stats Phase" << endl;
+	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
+	{
+		(*iter)->stats();
+	}
 
+	cout << "\n---------------------------------------------------------------------" << endl;
 }
 
 void Game::clean()
 {
-
+	cout << "\n---------------------------------------------------------------------" << endl;
+	cout << "Start of Clean Check Phase" << endl;
+	for (iterClean = vpCharacters.begin(); iterClean != vpCharacters.end(); iterClean++)
+	{
+		
+		bool deathCheck = (*iterClean)->isAlive();
+		if (deathCheck == false)
+		{
+			cout << "Removing " << (*iterClean)->getID() << " From Game cz HE DEAD" << endl;
+			vpCharacters.erase(iterClean);
+		}
+	}
+	cout << "\n---------------------------------------------------------------------" << endl;
 }
 

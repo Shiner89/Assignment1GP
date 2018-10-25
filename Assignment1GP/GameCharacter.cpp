@@ -14,7 +14,7 @@ void GameCharacter::spawn(string typeID, int health, int speed, int x, int y)
 
 void GameCharacter::render()
 {
-	cout << "------------CALLING RENDER FUNCTION------------" << endl;
+	
 	cout << "TypeID: " << m_typeID << endl;
 	cout << "X and Y coords are: " << m_X << "," << m_Y << endl;
 	
@@ -27,6 +27,7 @@ void GameCharacter::stats()
 	cout << "Health: " << m_Health << endl;
 	cout << "Speed: " << m_Speed << endl;
 	cout << "X and Y coords are: " << m_X << "," << m_Y << endl;
+	cout << "--------------------------------------------------" << endl;
 }
 void GameCharacter::update()
 {

@@ -16,20 +16,90 @@ Player::Player()
 
 void Player::update()
 {
-	cout << "What direction would you like to move?\n 1: move UP\n 2: move DOWN\n 3: move RIGHT\n 4: move LEFT" << endl;
-	int playerMove = cin.get();
-	switch(playerMove)
-	{
-	case 1:
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	case 4:
-		break;
+	bool moveCheck = false;
+	int playerMove;
+	int change;
 
+	while (moveCheck != true)
+	{
+		cout << "What direction would you like to move?\n 1: move UP\n 2: move DOWN\n 3: move RIGHT\n 4: move LEFT" << endl;
+		cin >> playerMove;
+		cout << "you have selected: " << playerMove << endl;
+
+		if (playerMove == 1)
+		{
+			change = this->m_Y + this->m_Speed;
+			if (change > 10)
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 2);
+				this->m_Y = 10;
+				moveCheck = true;
+				cout << "You hit a wall, turn back!!" << endl;
+			}
+			else
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 2);
+				this->m_Y = this->m_Y + this->m_Speed;
+				moveCheck = true;
+			}
+		}
+		else if (playerMove == 2)
+		{
+			change = this->m_Y - this->m_Speed;
+			if (change < 0)
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 2);
+				this->m_Y = 0;
+				moveCheck = true;
+				cout << "You hit a wall, turn back!!" << endl;
+			}
+			else
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 2);
+				this->m_Y = this->m_Y - this->m_Speed;
+				moveCheck = true;
+			}
+		}
+		else if (playerMove == 3)
+		{
+			change = this->m_X + this->m_Speed;
+			if (change > 10)
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 2);
+				this->m_X = 10;
+				moveCheck = true;
+				cout << "You hit a wall, turn back!!" << endl;
+			}
+			else
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 2);
+				this->m_X = this->m_X + this->m_Speed;
+				moveCheck = true;
+			}
+		}
+		else if (playerMove == 4)
+		{
+			change = this->m_Y - this->m_Speed;
+			if (change < 0)
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 2);
+				this->m_X = 0;
+				moveCheck = true;
+				cout << "You hit a wall, turn back!!" << endl;
+			}
+			else
+			{
+				this->m_Health = this->m_Health - (this->m_Speed * 2);
+				this->m_X = this->m_X - this->m_Speed;
+				moveCheck = true;
+			}
+		}
+		else
+		{
+			cout << "-------------------Incorrect Input Try Again-------------------" << endl;
+		}
 	}
+	
 }
 
 int Player::randCoordX()
