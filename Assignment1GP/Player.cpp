@@ -1,3 +1,4 @@
+
 #include "Player.h"
 
 
@@ -79,7 +80,7 @@ void Player::update()
 		}
 		else if (playerMove == 4)
 		{
-			change = this->m_Y - this->m_Speed;
+			change = this->m_X - this->m_Speed;
 			if (change < 0)
 			{
 				this->m_Health = this->m_Health - (this->m_Speed * 2);

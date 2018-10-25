@@ -7,7 +7,7 @@ int main()
 	Game* GameMode = new Game();
 	GameMode->init();
 
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < 50; i++)
 	{
 		GameMode->render();
 			GameMode->update();

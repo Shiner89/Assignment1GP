@@ -1,2 +1,3 @@
-﻿  Game.cpp
-  Assignment1GP.vcxproj -> C:\gp\code\Assignment1GP\Debug\Assignment1GP.exe
+﻿  Main.cpp
+c:\gp\tutorials\assignment1gp\assignment1gp\main.cpp(6): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Assignment1GP.vcxproj -> C:\gp\tutorials\Assignment1GP\Debug\Assignment1GP.exe
