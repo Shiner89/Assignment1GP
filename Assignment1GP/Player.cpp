@@ -20,7 +20,6 @@ void Player::update()
 	bool moveCheck = false;
 	int playerMove;
 	int change;
-
 	// start of the while loop
 	while (moveCheck != true)
 	{

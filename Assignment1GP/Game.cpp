@@ -5,13 +5,6 @@
 
 void Game::init()
 {
-	
-	
-	/**
-	this is not working because while there is no empty constructor, the system is expecting you to have something typed in when 
-	you create the new player object, this can be done by either filling the construtor with variables or set them all in the
-	.h file of the player, enemy etc
-	**/
 	//enemys assigned names to help with the comparing process
 	GameCharacter* Player1 = new Player();
 	GameCharacter* Enemy1 = new Enemy("Grunt Joe");
@@ -25,7 +18,6 @@ void Game::init()
 	vpCharacters.push_back(Enemy3);
 	vpCharacters.push_back(Enemy4);
 
-	
 	cout << "\n---------------------------------------------------------------------" << endl;
 	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
 	{
@@ -33,16 +25,6 @@ void Game::init()
 		
 	}
 
-	/*
-	Player1->stats();
-	Enemy1->stats();
-	Enemy2->stats();
-	Enemy3->stats();
-	Enemy4->stats();
-	*/
-
-	//make an if loop that will check all and if there positions match then change then. this will only happen once
-	//this loop will be reused through the battle checking function
 	cout << "Loop Chack to see if any characters match points" << endl;
 	for (iter = vpCharacters.begin(); iter != vpCharacters.end(); iter++)
 	{

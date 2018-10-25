@@ -22,23 +22,18 @@ void Enemy::update()
 
 	while (moveCheck != true)
 	{
-
 		int randMove = rand() % 4 + 1;
 		cout << "value selected: " << randMove << endl;
-		
 		cout << "change is: " << change << endl;
-
 		if (randMove == 1)
 		{
 			change = this->m_Y + this->m_Speed;
-			if (change >= 10 )
+			if (change >= 10)
 			{
 				this->m_Health = this->m_Health - (this->m_Speed * 3);
 				this->m_Y = this->m_Y + this->m_Speed;
 				moveCheck = true;
 			}
-			
-
 		}
 		else if (randMove == 2)
 		{
