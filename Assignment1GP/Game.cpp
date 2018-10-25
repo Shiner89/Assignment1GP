@@ -139,21 +139,29 @@ void Game::stats()
 
 void Game::clean()
 {
+	vector<GameCharacter*>::const_iterator iterClean;
 	cout << "\n---------------------------------------------------------------------" << endl;
 	cout << "Start of Clean Check Phase" << endl;
-	for (iterClean = vpCharacters.begin(); iterClean != vpCharacters.end(); iterClean++)
+	for (iterClean = vpCharacters.begin(); iterClean != vpCharacters.end();)
 	{
 		
 		
 		if ((*iterClean)->isAlive() == false)
 		{
+			/*
+			if ((*iterClean)->getID() == "Hero")
+			{
+				HeroCheck = false;
+			}
+			*/
 			cout << "Removing " << (*iterClean)->getID() << " From Game cz HE DEAD" << endl;
 			delete *iterClean;
-<<<<<<< HEAD
-=======
-			
->>>>>>> 2c51f82a79279368ad84514bd5d4704bb51996e6
+
 			iterClean = vpCharacters.erase(iterClean);
+		}
+		else
+		{
+			iterClean++;
 		}
 	}
 	cout << "\n---------------------------------------------------------------------" << endl;

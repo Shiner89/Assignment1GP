@@ -21,14 +21,20 @@ void Player::update()
 	int playerMove;
 	int change;
 
+	// start of the while loop
 	while (moveCheck != true)
 	{
+		//asking user for what direction that they will want to do.
 		cout << "What direction would you like to move?\n 1: move UP\n 2: move DOWN\n 3: move RIGHT\n 4: move LEFT" << endl;
 		cin >> playerMove;
 		cout << "you have selected: " << playerMove << endl;
 
+		// if statement that will call the while loop again if incorrect value entered
 		if (playerMove == 1)
 		{
+			//variable to check value and compare to 10 or 0
+			// if statement to either say you hit the wall or allow you to move in that diretion
+			//repeated for all values from 1 to 4
 			change = this->m_Y + this->m_Speed;
 			if (change > 10)
 			{

@@ -6,8 +6,9 @@ int main()
 	srand(time(NULL));
 	Game* GameMode = new Game();
 	GameMode->init();
-
-	for (int i = 0; i < 50; i++)
+	bool HeroCheck = true;
+	//this is to go in the for loop once i know how to change it in other classes and functions :    || HeroCheck != true
+	for (int i = 0; i < 20; i++ )
 	{
 		GameMode->render();
 			GameMode->update();

@@ -6,6 +6,7 @@
 #include "Enemy.h"
 #include <vector>
 
+
 class Game
 {
 public:
@@ -20,6 +21,7 @@ private:
 	vector<GameCharacter*> vpCharacters;
 	vector<GameCharacter*>::const_iterator iter;
 	vector<GameCharacter*>::const_iterator iter2;
-	vector<GameCharacter*>::const_iterator iterClean;
+	
+	
 };
 #endif // !GAME_H
