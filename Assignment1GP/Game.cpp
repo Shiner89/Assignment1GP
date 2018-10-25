@@ -144,11 +144,13 @@ void Game::clean()
 	for (iterClean = vpCharacters.begin(); iterClean != vpCharacters.end(); iterClean++)
 	{
 		
-		bool deathCheck = (*iterClean)->isAlive();
-		if (deathCheck == false)
+		
+		if ((*iterClean)->isAlive() == false)
 		{
 			cout << "Removing " << (*iterClean)->getID() << " From Game cz HE DEAD" << endl;
-			vpCharacters.erase(iterClean);
+			delete *iterClean;
+			
+			iterClean = vpCharacters.erase(iterClean);
 		}
 	}
 	cout << "\n---------------------------------------------------------------------" << endl;
